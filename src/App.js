@@ -32,10 +32,20 @@ function App() {
 
   return (
     <div className="app">
+        {/* this is ternary opearator, and we say if there is a token, we render the player page (component), if not,
+        so we render the same login page*/}
+
+        {
+            token ? (
+                <h1>I am logged in</h1>
+                // <Player />
+            ) : (
+                <Login />
+            )
+        }
 
     {/*    Spotify logo    */}
     {/*    Login with spotify button    */}
-        <Login />
     </div>
   );
 }
