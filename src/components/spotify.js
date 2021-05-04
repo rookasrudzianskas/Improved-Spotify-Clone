@@ -24,4 +24,5 @@ const scopes = [
 // go thought all the spaces and add the one space per each one
 // response token is then you login, you receive the token, which is the string, which represents that you are authenticated, and you are
 //what you are
-export const loginUrl = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join("%20")}&response_type=token`;
+// show_dialog=true this is the whole prompt and gives that sort of experiace
+export const loginUrl = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join("%20")}&response_type=token&show_dialog=true`;
