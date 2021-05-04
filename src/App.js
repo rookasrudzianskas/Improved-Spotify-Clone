@@ -2,6 +2,8 @@ import './App.css';
 import Login from "./components/Login";
 import {useEffect, useState} from "react";
 import {getTokenFromUrl} from "./components/spotify";
+import SpotifyWebApi from "spotify-web-api-js";
+
 
 function App() {
     // we store the token in the state
