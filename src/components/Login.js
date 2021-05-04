@@ -10,7 +10,7 @@ const Login = () => {
             />
         {/*     Spotify logo*/}
 
-            <button>LOGIN WITH SPOTIFY</button>
+            <a>LOGIN WITH SPOTIFY</a>
         {/*    Login with spotify button    */}
         </div>
     );
