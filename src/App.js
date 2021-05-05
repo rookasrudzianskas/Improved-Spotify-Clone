@@ -61,11 +61,11 @@ function App() {
                 })
             });
         }
-        console.log("I HAVE THE TOKEEEN 🚀", _token)
+        // console.log("I HAVE THE TOKEEEN 🚀", _token)
     }, []);
 
-    console.log("DATA LAYER =========>", user);
-    console.log("TOKEN =========>", token);
+    // console.log("DATA LAYER =========>", user);
+    // console.log("TOKEN =========>", token);
 
   return (
     <div className="app">

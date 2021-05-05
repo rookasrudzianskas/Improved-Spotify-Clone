@@ -6,6 +6,7 @@ export const initialState = {
     playlists: [],
     playing: false,
     item: null,
+    // remove after finished developing
     token: "BQBYg6G8331Al5uCI8OpRY0cm2g2pb2kwvsTVvziA1o0iRoqOoFWa8RWLHvWj5TrbEcvN5XhAVpLIYIT_xKfSd0FKLiyr7dMyT6upiUr0ROqnnozAG5nu82mLRR1QSmSjH9OMkxydJYzLGJh3yv2CwWh4EQieAHbhK1sy6SYzYLOJzeT",
 };
 
