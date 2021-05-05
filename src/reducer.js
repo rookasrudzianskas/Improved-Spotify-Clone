@@ -50,6 +50,7 @@ const reducer = (state, action) => {
 
         case 'SET_DISCOVER_WEEKLY':
             return {
+                // populate discover weekly in data layer
                 // we rertun the state
                 ...state,
                 // and update the discover weekly object in the data layer, with the data received frm the response.

@@ -1,8 +1,12 @@
 import React from 'react';
 import "./styles/Body.css";
 import Header from "./Header";
+import {useDataLayerValue} from "../DataLayer";
 
 const Body = ({ spotify }) => {
+
+    const [{ discover_weekly }, dispatch] = useDataLayerValue();
+
     return (
         <div className="body">
             <Header spotify={spotify} />
