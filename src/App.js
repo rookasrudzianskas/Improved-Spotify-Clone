@@ -17,11 +17,9 @@ import {useDataLayerValue} from "./DataLayer";
 const spotify = new SpotifyWebApi();
 
 function App() {
-    // we store the token in the state
-    const [token, setToken] = useState(null);
     // dispatch  is the gun to shoot the action and change the data layer
     // we take the datalayer, destructure and take just the user, istead of all the info in the data layer
-    const [{ user }, dispatch] = useDataLayerValue();
+    const [{ user, token }, dispatch] = useDataLayerValue();
 
     //    run the code on the condition
     useEffect(() => {
@@ -38,8 +36,11 @@ function App() {
         const _token = hash.access_token;
 
         if(_token) {
-            // if there is a token, so we set it up to the token in the state, using setState
-            setToken(_token);
+            // we are dispatching the action to store the token in the data layer
+            dispatch({
+                type: "SET_TOKEN",
+                token: _token,
+            })
 
 
             // giving the access token for the spotify api
@@ -64,6 +65,7 @@ function App() {
     }, []);
 
     console.log("DATA LAYER =========>", user);
+    console.log("TOKEN =========>", token);
 
   return (
     <div className="app">
