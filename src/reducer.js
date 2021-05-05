@@ -7,7 +7,7 @@ export const initialState = {
     playing: false,
     item: null,
     // remove after finished developing
-    token: '',
+    token: 'BQDt41ovgGqenpU_meeKKBE1cTPoBIlsdvY9KBRJZqU9xpkS7UrXlBsFG8mTSR6x3_KYmbvPawklrn7qZFpDaabgIqaEbbG2TRTGDu8Rp3QIS_RWlo2CnVU8uMyZhXEM-fZTM_w-_7BwKKYvEus_NCNP3xJdpQf9A_qktv5HeDvz5zYi',
 };
 
 // state is how the data layer currently looks like, and the action is how we manipulate it

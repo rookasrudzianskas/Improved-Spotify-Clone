@@ -27,6 +27,7 @@ const Sidebar = () => {
             <hr />
 
             {/* we go per the playlist object, map per each one, and output to the screen the title per each iteration*/}
+            {/* ? means, if there are no items, we do not freak out and go forward easily*/}
             {playlists?.items?.map(playlist => (
                 <SidebarOption title={playlist.name} />
             ))}
