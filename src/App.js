@@ -58,7 +58,15 @@ function App() {
                     type: 'SET_USER',
                     // we give the payload user object
                     user: user
-                })
+                });
+            });
+            // we are getting the user playlists
+            spotify.getUserPlaylists().then((playlists) => {
+                // and dispatching the action with the playlists to update the data layer initial state
+                dispatch({
+                    type: "SET_PLAYLISTS",
+                    playlists: playlists,
+                });
             });
         }
         // console.log("I HAVE THE TOKEEEN 🚀", _token)

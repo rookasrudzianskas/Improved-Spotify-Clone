@@ -7,7 +7,7 @@ export const initialState = {
     playing: false,
     item: null,
     // remove after finished developing
-    token: "BQBYg6G8331Al5uCI8OpRY0cm2g2pb2kwvsTVvziA1o0iRoqOoFWa8RWLHvWj5TrbEcvN5XhAVpLIYIT_xKfSd0FKLiyr7dMyT6upiUr0ROqnnozAG5nu82mLRR1QSmSjH9OMkxydJYzLGJh3yv2CwWh4EQieAHbhK1sy6SYzYLOJzeT",
+    token: '',
 };
 
 // state is how the data layer currently looks like, and the action is how we manipulate it
@@ -38,6 +38,14 @@ const reducer = (state, action) => {
                 // we return the previrous items in the state, and update the following
                 ...state,
                 token: action.token
+            };
+        //    playlists dispatching
+        case 'SET_PLAYLISTS':
+            return {
+                // we rertun the state
+                ...state,
+                // and update the playlists
+                playlists: action.playlists
             }
         //     if the dispatch type is not anything from above, it is going to just return the state, that is all
         default:
