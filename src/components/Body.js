@@ -2,6 +2,9 @@ import React from 'react';
 import "./styles/Body.css";
 import Header from "./Header";
 import {useDataLayerValue} from "../DataLayer";
+import PlayCircleFilledIcon from "@material-ui/icons/PlayCircleFilled";
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 
 const Body = ({ spotify }) => {
     // we get accesss to the discover_weekly playlist
@@ -20,6 +23,18 @@ const Body = ({ spotify }) => {
                     <h2>Discover Weekly</h2>
                     <p>{discover_weekly?.description}</p>
                 </div>
+            </div>
+
+
+            <div className="body__songs">
+                <div className="body__icons">
+                    <PlayCircleFilledIcon
+                        className="body__shuffle"
+                    />
+                    <FavoriteIcon fontSize="large" />
+                    <MoreHorizIcon />
+                </div>
+            {/*     list of songs   */}
             </div>
 
         </div>
