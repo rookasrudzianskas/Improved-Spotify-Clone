@@ -6,6 +6,13 @@ import SpotifyWebApi from "spotify-web-api-js";
 import Player from "./components/Player";
 import {useDataLayerValue} from "./DataLayer";
 
+
+// this goes in the following order, first it renders the app
+// datalayer is null we accept the spotify login and get the token
+// then it renders one more time app, and useEffect gets fired again, because wew have access token, we go to the if as true
+// and by calling .getMe, we dispatch an action to the data layer to update the initial state with the user info
+// we update the data layer using dispatch and in this way we receive the updated user object to the new data
+
 // this is going to allow us to comunicate with spotify back and forward
 const spotify = new SpotifyWebApi();
 

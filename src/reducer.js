@@ -11,6 +11,10 @@ export const initialState = {
 // state is how the data layer currently looks like, and the action is how we manipulate it
 // action set the current item what we are listening and so on
 const reducer = (state, action) => {
+
+    // reducer listens for the dispatching actions
+    // he coughts up the action type and goes to that action tpe
+
     console.log('🚀', action);
 
     // we push the user to the data layer, meaning we dispatch the action with type and the payload, this action type is setuser
@@ -22,6 +26,7 @@ const reducer = (state, action) => {
                 // we keep everything was in the previrous state and update the following
                 ...state,
                 // update the user, with the info what was in the user object, in the payload which was dispatched to the reducer
+                // in this case, takes everything what is in the state, and updates the user with the data from dispatched payload
                 user: action.user
 
             }
