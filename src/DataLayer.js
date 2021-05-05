@@ -10,3 +10,7 @@ export const DataLayer = ({ initialState, reducer, children }) => (
         {children}
     </DataLayerContext.Provider>
 );
+
+// the way to get the access to the data layer
+// we access to it per this line
+export const useDataLayerValue = () => useContext(DataLayerContext);

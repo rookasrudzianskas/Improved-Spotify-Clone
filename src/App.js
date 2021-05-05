@@ -4,13 +4,16 @@ import {useEffect, useState} from "react";
 import {getTokenFromUrl} from "./components/spotify";
 import SpotifyWebApi from "spotify-web-api-js";
 import Player from "./components/Player";
+import {useDataLayerValue} from "./DataLayer";
 
 // this is going to allow us to comunicate with spotify back and forward
 const spotify = new SpotifyWebApi();
 
 function App() {
     // we store the token in the state
-    const [token, setToken] = useState(null)
+    const [token, setToken] = useState(null);
+    // dispatch  is the gun to shoot the action and change the data layer
+    const [{}, dispatch] = useDataLayerValue();
 
     //    run the code on the condition
     useEffect(() => {
