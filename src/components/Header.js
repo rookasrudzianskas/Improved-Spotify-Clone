@@ -5,7 +5,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import {useDataLayerValue} from "../DataLayer";
 
 
-const Header = () => {
+const Header = ({ spotify }) => {
     // we are accessing the data layer, to receive the needed info
     const [{ user }, dispatch] = useDataLayerValue();
 
