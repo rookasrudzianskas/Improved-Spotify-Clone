@@ -9,7 +9,6 @@ const SidebarOption = ({ title, Icon }) => {
             {Icon && <Icon className="sidebarOption__icon" />}
             {/* if we have an icon, so I render the h4 title, if not so we render the p title*/}
             {Icon ? <h4>{title}</h4> : <p>{title}</p>}
-
         </div>
     );
 };
