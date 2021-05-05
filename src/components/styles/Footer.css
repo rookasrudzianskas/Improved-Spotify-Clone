@@ -42,3 +42,15 @@
     justify-content: space-between;
     max-width: 300px;
 }
+
+.footer__songInfo > h4 {
+    margin-bottom: 5px;
+}
+
+.footer__songInfo > p {
+    font-size: 12px;
+}
+
+.footer__green {
+    color: #1db954;
+}
