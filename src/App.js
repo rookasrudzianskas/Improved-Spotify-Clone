@@ -3,7 +3,10 @@ import Login from "./components/Login";
 import {useEffect, useState} from "react";
 import {getTokenFromUrl} from "./components/spotify";
 import SpotifyWebApi from "spotify-web-api-js";
+import Player from "./components/Player";
 
+// this is going to allow us to comunicate with spotify back and forward
+const spotify = new SpotifyWebApi();
 
 function App() {
     // we store the token in the state
@@ -25,7 +28,16 @@ function App() {
 
         if(_token) {
             // if there is a token, so we set it up to the token in the state, using setState
-            setToken(_token)
+            setToken(_token);
+
+            // giving the access token for the spotify api
+            //here is the key to you, which will let you to get all the info from the spotify
+            spotify.setAccessToken(_token);
+            // get users account
+            spotify.getMe().then((user) => {
+                // we get back the whole user object back.
+                console.log("🤹", user);
+            });
         }
         console.log("I HAVE THE TOKEEEN 🚀", _token)
     }, []);
@@ -39,7 +51,7 @@ function App() {
 
         {
             token ? (
-                <h1>I am logged in</h1>
+                <Player />
                 // <Player />
             ) : (
                 <Login />
