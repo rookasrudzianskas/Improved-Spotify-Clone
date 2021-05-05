@@ -34,6 +34,12 @@
     max-width: 300px;
 }
 
+.footer__icon:hover,
+.footer__green:hover {
+    transition: transform 0.2s ease-in;
+    transform: scale(1.2) !important;
+}
+
 .footer__right {
     flex: 0.3;
     display: flex;
