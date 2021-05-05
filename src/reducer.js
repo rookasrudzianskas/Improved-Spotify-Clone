@@ -1,9 +1,13 @@
+import { findAllByDisplayValue } from "@testing-library/react";
 
 // this is how the state in the beggining looks like, thhe initial state
 // in the beggining there is nothing happpening there, the user is none, there are no playlists and so on
 export const initialState = {
     user: null,
     playlists: [],
+    spotify: null,
+    discover_weekly: null,
+    top_artists: null,
     playing: false,
     item: null,
     // remove after finished developing
@@ -39,6 +43,24 @@ const reducer = (state, action) => {
                 ...state,
                 token: action.token
             };
+
+        case "SET_ITEM":
+            return {
+                ...state,
+                item: action.item,
+            };
+
+        case "SET_SPOTIFY":
+            return {
+                ...state,
+                spotify: action.spotify,
+            };
+
+        case "SET_TOP_ARTISTS":
+            return {
+                ...state,
+                top_artists: action.top_artists,
+            };
         //    playlists dispatching
         case 'SET_PLAYLISTS':
             return {
@@ -47,6 +69,12 @@ const reducer = (state, action) => {
                 // and update the playlists
                 playlists: action.playlists
             }
+
+        case "SET_PLAYING":
+            return {
+                ...state,
+                playing: action.playing,
+            };
 
         case 'SET_DISCOVER_WEEKLY':
             return {

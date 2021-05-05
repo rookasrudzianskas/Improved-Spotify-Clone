@@ -46,6 +46,26 @@ function App() {
             // giving the access token for the spotify api
             //here is the key to you, which will let you to get all the info from the spotify
             spotify.setAccessToken(_token);
+
+            spotify.getMyTopArtists().then((response) =>
+                dispatch({
+                    type: "SET_TOP_ARTISTS",
+                    top_artists: response,
+                })
+            );
+
+            dispatch({
+                type: "SET_SPOTIFY",
+                spotify: spotify,
+            });
+
+            spotify.getUserPlaylists().then((playlists) => {
+                dispatch({
+                    type: "SET_PLAYLISTS",
+                    playlists: playlists,
+                });
+            });
+
             // get users account
             spotify.getMe().then((user) => {
                 // we get back the whole user object back.
@@ -81,7 +101,7 @@ function App() {
             })
         }
         console.log("I HAVE THE TOKEEEN 🚀", _token)
-    }, []);
+    }, [token, dispatch]);
 
     // console.log("DATA LAYER =========>", user);
     // console.log("TOKEN =========>", token);
