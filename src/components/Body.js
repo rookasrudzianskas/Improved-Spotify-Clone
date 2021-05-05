@@ -5,6 +5,7 @@ import {useDataLayerValue} from "../DataLayer";
 import PlayCircleFilledIcon from "@material-ui/icons/PlayCircleFilled";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
+import SongRow from "./SongRow";
 
 const Body = ({ spotify }) => {
     // we get accesss to the discover_weekly playlist
@@ -34,7 +35,13 @@ const Body = ({ spotify }) => {
                     <FavoriteIcon fontSize="large" />
                     <MoreHorizIcon />
                 </div>
+
             {/*     list of songs   */}
+            {/*     we go to the discover weekly playlist object, go to the tracks, and them items,*/}
+            {/*     in items we see all the songs,s o with map we go per each one and show out on the screen*/}
+                {discover_weekly?.tracks.items.map((item) => (
+                    <SongRow track={item.track} />
+                ))}
             </div>
 
         </div>
