@@ -13,7 +13,7 @@ function App() {
     // we store the token in the state
     const [token, setToken] = useState(null);
     // dispatch  is the gun to shoot the action and change the data layer
-    const [{}, dispatch] = useDataLayerValue();
+    const [{ user }, dispatch] = useDataLayerValue();
 
     //    run the code on the condition
     useEffect(() => {
@@ -33,6 +33,7 @@ function App() {
             // if there is a token, so we set it up to the token in the state, using setState
             setToken(_token);
 
+
             // giving the access token for the spotify api
             //here is the key to you, which will let you to get all the info from the spotify
             spotify.setAccessToken(_token);
@@ -40,12 +41,21 @@ function App() {
             spotify.getMe().then((user) => {
                 // we get back the whole user object back.
                 console.log("🤹", user);
+
+                // we are going to shoot it to the data layer
+                // we push the user to the data layer with action type
+                dispatch({
+                    // action type
+                    type: 'SET_USER',
+                    // we give the payload user object
+                    user: user
+                })
             });
         }
         console.log("I HAVE THE TOKEEEN 🚀", _token)
     }, []);
 
-
+    console.log("🙎‍♂️", user);
 
   return (
     <div className="app">
