@@ -13,6 +13,7 @@ function App() {
     // we store the token in the state
     const [token, setToken] = useState(null);
     // dispatch  is the gun to shoot the action and change the data layer
+    // we take the datalayer, destructure and take just the user, istead of all the info in the data layer
     const [{ user }, dispatch] = useDataLayerValue();
 
     //    run the code on the condition
@@ -55,7 +56,7 @@ function App() {
         console.log("I HAVE THE TOKEEEN 🚀", _token)
     }, []);
 
-    console.log("🙎‍♂️", user);
+    console.log("DATA LAYER =========>", user);
 
   return (
     <div className="app">
