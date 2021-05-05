@@ -74,7 +74,9 @@ function App() {
 
         {
             token ? (
-                <Player />
+
+                // we pass the spotify object, in this there is all the user info
+                <Player spotify={spotify} />
                 // <Player />
             ) : (
                 <Login />

@@ -2,10 +2,10 @@ import React from 'react';
 import "./styles/Player.css";
 
 
-const Player = () => {
+const Player = ({ spotify }) => {
     return (
         <div>
-            <h1>Login</h1>
+            <h1>Welcome to spotify</h1>
         </div>
     );
 };
