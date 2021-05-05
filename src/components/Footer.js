@@ -27,7 +27,18 @@ const Footer = () => {
             </div>
 
             <div className="footer__right">
-                <p>Volume controls</p>
+                {/* one of the gird items in one item and they do that sizing by itself*/}
+                <Grid container spacing={2}>
+                    <Grid item>
+                        <PlaylistPlayIcon />
+                    </Grid>
+                    <Grid item>
+                        <VolumeDownIcon />
+                    </Grid>
+                    <Grid item xs>
+                        <Slider aria-labelledby="continuous-slider" />
+                    </Grid>
+                </Grid>
             </div>
 
         </div>
