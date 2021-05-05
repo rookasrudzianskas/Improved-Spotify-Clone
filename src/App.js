@@ -68,6 +68,17 @@ function App() {
                     playlists: playlists,
                 });
             });
+
+            // getting discover weekly, by my playlist id
+            spotify.getPlaylist('37i9dQZEVXcEl1nnHivtq4').then((response) => {
+                // then we receive the discover weekly response, the object with the discver weekly songs
+                // we shoot the action to the reducer to update out discover weekly playlist with the new data
+                // at this point it is going to be the case SET_DISCOVER_WEEKLY type and the response
+                dispatch({
+                    type: "SET_DISCOVER_WEEKLY",
+                    discover_weekly: response,
+                })
+            })
         }
         console.log("I HAVE THE TOKEEEN 🚀", _token)
     }, []);

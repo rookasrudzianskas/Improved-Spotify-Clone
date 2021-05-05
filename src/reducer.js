@@ -47,6 +47,14 @@ const reducer = (state, action) => {
                 // and update the playlists
                 playlists: action.playlists
             }
+
+        case 'SET_DISCOVER_WEEKLY':
+            return {
+                // we rertun the state
+                ...state,
+                // and update the discover weekly object in the data layer, with the data received frm the response.
+                discover_weekly: action.discover_weekly,
+            }
         //     if the dispatch type is not anything from above, it is going to just return the state, that is all
         default:
             return state
