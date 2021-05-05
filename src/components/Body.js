@@ -4,7 +4,7 @@ import Header from "./Header";
 import {useDataLayerValue} from "../DataLayer";
 
 const Body = ({ spotify }) => {
-
+    // we get accesss to the discover_weekly playlist
     const [{ discover_weekly }, dispatch] = useDataLayerValue();
 
     return (
@@ -12,11 +12,13 @@ const Body = ({ spotify }) => {
             <Header spotify={spotify} />
 
             <div className="body__info">
-                <img src="https://i.pinimg.com/originals/cc/f7/b2/ccf7b23b67fc46919be6ac07634d5bfc.jpg" alt="" />
+                {/* this goes to the discover weekly data layer object and pulls the image[0], the first image url*/}
+                {/* and puts to the source code*/}
+                <img src={discover_weekly?.images[0].url} alt="" />
                 <div className="body__infoText">
                     <strong>PLAYLIST</strong>
                     <h2>Discover Weekly</h2>
-                    <p>description</p>
+                    <p>{discover_weekly?.description}</p>
                 </div>
             </div>
 
