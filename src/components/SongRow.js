@@ -17,6 +17,7 @@ const SongRow = ({ track}) => {
                     {/* in that tracks.items each item info, which consists of name, artists[array], album.name and so on*/}
                     {/* in this case we take the props -> track.name, we map per each artists in that array and output the artist.name with joined function*/}
                     {/* and output the track.album.name which is also the object inside the track prop*/}
+                    {/* in artist it cames as array so we take each item and join by the comma and space after to make in one line*/}
                     {track.artists.map((artist) => artist.name).join(", ")}
                     {track.album.name}
                 </p>
